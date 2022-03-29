@@ -1,0 +1,21 @@
+.home-parent {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sidebar-container {
+    background-color: var(--color-hover-light-grey);
+    height: 100vh;
+}
+
+/* Media */
+
+@media screen and (max-width: 768px) {
+    
+    .home-parent {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}

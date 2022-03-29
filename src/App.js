@@ -1,20 +1,22 @@
-import "./App.css";
-import logo from "./logo.png";
+import './App.css';
+import { NavigationRoutes } from './routes/Routes';
+import { Navbar } from "./components/Navigation/NavBar"
+import { Footer } from "./components/Footer/Footer"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="mockBee logo" width="180" height="180" />
-        <h1 className="brand-title">
-          Welcome to <span>TI Video Library!</span>
-        </h1>
-        <p className="brand-description">
-          Get started by editing <code>src/App.js</code>
-        </p>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <div className="section-one">
+                <Navbar />
+            </div>
+            <div className="section-two">
+                <NavigationRoutes />
+            </div>
+            <div className="section-three">
+                <Footer />
+            </div>
+        </div>
+    );
 }
 
 export default App;
