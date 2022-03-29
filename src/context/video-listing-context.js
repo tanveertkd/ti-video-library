@@ -19,9 +19,8 @@ const VideoProvider = ({ children }) => {
                         status,
                     } = await getVidoes();
                     if (status === 200) videoListDispatch({ type: 'LOAD_VIDEOS', payload: videos });
-                    else throw new Error('Falied with code: ', status);
-                } catch {
-                    throw new Error('Error fetching data.');
+                } catch(error) {
+                    console.log('Error fetching data.');
                 }
             })(),
         [videoListDispatch],

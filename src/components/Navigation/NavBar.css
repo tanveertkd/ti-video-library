@@ -117,6 +117,14 @@
         width: fit-content;
         margin-right: 10rem;   
     }
+
+    .nav-main-mobile {
+        display: none;
+    }
+    
+    .nav-main-right-mobile-inactive {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {

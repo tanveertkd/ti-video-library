@@ -1,5 +1,4 @@
 .nav-sidebar-container {
-    flex: 0 0 250px;
     flex-direction: column;
     width: 250px;
     background-color: var(--color-hover-light-grey);
