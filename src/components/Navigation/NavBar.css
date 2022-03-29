@@ -131,6 +131,8 @@
 
     .hamburger-menu:active {
         transform: scale(0.8);
+        background-color: var(--color-text-lighter-grey);
+        color: var(--color-grey);
     }
 
     .nav-main-left {
@@ -164,9 +166,5 @@
         justify-content: flex-start;
         margin: 1rem auto;
         width: 100%;
-    }
-
-    .sidebar-container {
-        display: none;
     }
 }

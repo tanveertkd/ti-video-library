@@ -5,7 +5,6 @@ import './VideoListing.css';
 
 const Videos = () => {
     const { videoListState } = useVideoProvider();
-    console.log(videoListState)
 
     return (
         <div className="video-card-parent">
