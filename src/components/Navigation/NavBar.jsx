@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../context';
 
 import './NavBar.css';
 
 const Navbar = () => {
+    const { auth, signOutHandler } = useAuth();
+
     const [navHamburger, setNavHamburger] = useState('nav-main-right-mobile-inactive');
 
     const toggleHamburger = () =>
@@ -47,14 +50,20 @@ const Navbar = () => {
                 {/* Nav right */}
                 <ul className="nav-main-right nav-main-ul">
                     <li className="nav-main-li">
-                        <Link to="/products" className="nav-main-item nav-btn-login">
+                        <Link to="/" className="nav-main-item nav-btn-login">
                             Explore
                         </Link>
                     </li>
                     <li className="nav-main-li">
-                        <Link to="/login" className="nav-main-item nav-btn-login">
-                            Login
-                        </Link>
+                        {!auth ? (
+                            <Link to="/login" className="nav-main-item nav-btn-login">
+                                Login
+                            </Link>
+                        ) : (
+                            <div className="nav-main-item nav-btn-login" onClick={signOutHandler}>
+                                Logout
+                            </div>
+                        )}
                     </li>
                 </ul>
 
@@ -76,9 +85,25 @@ const Navbar = () => {
                 {/* Nav right Mobile*/}
                 <ul className={`${navHamburger} nav-main-ul`}>
                     <li className="nav-main-li-res">
-                        <Link to="/login" className="nav-right-btn">
-                            Login
-                        </Link>
+                        {!auth ? (
+                            <Link
+                                to="/login"
+                                className="nav-main-item nav-btn-login"
+                                onClick={toggleHamburger}
+                            >
+                                Login
+                            </Link>
+                        ) : (
+                            <div
+                                className="nav-main-item nav-btn-login"
+                                onClick={() => {
+                                    toggleHamburger();
+                                    signOutHandler();
+                                }}
+                            >
+                                Logout
+                            </div>
+                        )}
                     </li>
                     <li className="nav-main-li-res">
                         <Link to="/products" className="nav-right-btn">

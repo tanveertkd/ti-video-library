@@ -209,6 +209,11 @@
         cursor: pointer;
     }
 
+    .nav-btn-login {
+        color: var(--primary-bg);
+        padding: 0;
+    }
+
     .nav-right-btn {
         color: var(--primary-bg);
     }

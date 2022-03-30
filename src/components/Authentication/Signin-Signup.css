@@ -1,0 +1,144 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--color-hover-light-grey);
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--color-grey);
+    border-radius: 0.4rem;
+    box-shadow: 5px 5px 5px var(--color-hover-grey);
+    width: 500px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-header {
+    font-size: 1.8rem;
+    margin: 1rem;
+}
+
+.login-input-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.form-input {
+    margin: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-label {
+    font-size: 1.2rem;
+}
+
+.input-form[type=text], .input-form[type=password] {
+    line-height: 1.4rem;
+    outline: none;
+    border: 1px solid var(--color-grey);
+    border-radius: 0.2rem;
+    padding: 0.25rem;
+    margin-top: 0.25rem;
+}
+
+.input-form[type=text]:focus, .input-form[type=password]:focus {
+    border: 1px solid var(--color-hover-grey);
+}
+
+.checkbox-reset {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.password-reset {
+    font-size: 0.9rem;
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+}
+
+.password-reset:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+}
+
+.form-submit-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.25rem;
+}
+
+.btn {
+    border: 1px solid var(--color-grey); 
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    letter-spacing: 2px;
+    width: 100%;
+}
+
+.form-btn {
+    background-color: var(--color-grey);
+    font-size: 1rem;
+    color: var(--primary-bg);
+}
+
+.form-btn:hover {
+    background-color: var(--color-hover-grey);
+}
+
+.sign-up {
+    margin: 1rem auto;
+}
+
+.signup-cta {
+    font-size: 0.95rem;
+}
+
+/* Media */
+
+@media screen and (max-width: 768px) {
+    .login-container {
+        align-items: flex-start;
+    }
+
+    .login {
+        width: 90%;
+        margin: 1rem auto;
+    }
+
+    .login-input-form {
+        width: 95%;
+    }
+
+    .input-label {
+        font-size: 1rem;
+    }
+
+    .checkbox-label {
+        font-size: 0.95rem;
+    }
+
+    .password-reset {
+        font-size: 0.7rem;
+    }
+
+    .form-btn {
+        font-size: 0.8rem;
+    }
+
+    .signup-cta {
+        font-size: 0.8rem;
+    }
+    
+}
