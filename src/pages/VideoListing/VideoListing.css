@@ -1,0 +1,15 @@
+.video-card-parent {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Media */
+
+@media screen and (max-width: 768px) {
+    .video-card-parent {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

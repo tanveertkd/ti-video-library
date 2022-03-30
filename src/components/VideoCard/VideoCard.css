@@ -1,0 +1,80 @@
+.video-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 17.80rem;
+    height: fit-content;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.video-thumbnail-asset {
+    height: 10rem;
+    width: 17.80rem;
+}
+
+.video-card-body {
+    display: flex;
+    align-items: center;
+}
+
+.video-title {
+    font-size: 0.95rem;
+    word-break: break-word;
+}
+
+.creator-name {
+    font-size: 0.8rem;
+    padding: 0.25rem 0;
+}
+
+.creator-acc-thumb {
+    border-radius: 50%;
+    padding: 0.5rem;
+    height: 2.25rem;
+    width: 2.25rem;
+}
+
+.video-details {
+    padding: 0.5rem;
+    text-align: start;
+}
+
+.video-details > p {
+    margin: 0;
+}
+
+.card-overflow-menu {
+    position: relative;
+}
+
+.overflow-container {
+    position: absolute;
+    right: 0;
+    top: 2rem;
+    background-color: var(--color-grey);
+    color: var(--primary-bg);
+}
+
+/* Media */
+
+@media screen and (max-width: 768px) {
+    .video-card-container {
+        width: 24rem;
+    }
+
+    .video-thumbnail-asset {
+        width: 24rem;
+        height: 12.5rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .video-card-container {
+        width: 17.80rem;
+    }
+
+    .video-thumbnail-asset {
+        height: 10rem;
+        width: 17.80rem;
+    }
+}
