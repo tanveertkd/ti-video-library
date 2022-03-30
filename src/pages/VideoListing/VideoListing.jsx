@@ -9,7 +9,7 @@ const Videos = () => {
     return (
         <div className="video-card-parent">
             {videoListState.data?.map((video) => (
-                <VideoCard video={video} />
+                <VideoCard key={video._id} video={video} />
             ))}
         </div>
     );
