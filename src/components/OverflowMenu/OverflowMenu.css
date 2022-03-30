@@ -18,6 +18,11 @@
 .overflow-li {
     padding: 0.5rem 1rem;
     margin: 0;
+    cursor: pointer;
+}
+
+.overflow-li:hover {
+    background-color: var(--color-hover-grey);
 }
 
 /* Media */
