@@ -1,0 +1,29 @@
+.overflow-inactive {
+    display: none;
+}
+
+.overflow-active {
+    display: flex;
+    border: 1px solid var(--color-grey);
+    width: max-content;
+}
+
+.overflow-ul {
+    list-style-type: none;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.overflow-li {
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
+
+/* Media */
+
+@media screen and (max-width: 768px) {
+    .overflow-li {
+        padding: 1rem 1.5rem;
+    }
+}

@@ -1,13 +1,21 @@
+import { useState } from 'react';
 import { thumbnailLink } from '../../utils/video-details-services';
+import { OverflowMenu } from '../OverflowMenu/OverflowMenu';
 
 import './VideoCard.css';
 
 const VideoCard = ({ video }) => {
-
     const reduceTitleLength = (title) => {
-        if(title.length > 50)
-            return title.substring(0, 47)+'...';
+        if (title.length > 50) return title.substring(0, 47) + '...';
         return title;
+    };
+
+    const [overflowState, setOverflowState] = useState('overflow-inactive');
+
+    const toggleOverflowMenu = () => {
+        setOverflowState(() =>
+            overflowState === 'overflow-inactive' ? 'overflow-active' : 'overflow-inactive',
+        );
     };
 
     return (
@@ -23,8 +31,11 @@ const VideoCard = ({ video }) => {
                     <p className="video-title">{reduceTitleLength(video.title)}</p>
                     <p className="creator-name">{video.creator}</p>
                 </div>
-                <div className="card-overflow-menu">
+                <div className="card-overflow-menu" onClick={toggleOverflowMenu}>
                     <i class="far fa-ellipsis-v"></i>
+                    <div className={`${overflowState} overflow-container`} >
+                        <OverflowMenu />
+                    </div>
                 </div>
             </div>
         </div>
