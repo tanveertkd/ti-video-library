@@ -6,8 +6,6 @@ const signInService = async (email, password) => {
         password,
     });
 
-    console.log(response);
-
     try {
         if (response.status === 200) return response;
         else console.log('Failed to login: ', response.status);

@@ -1,10 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 
-// Pages
+// From pages
 import { Home } from "../pages/Home/Home";
 
-
-//TEMP CHECK
+// From Components
 import { SignIn } from "../components/Authentication/Signin";
 import { SignUp } from "../components/Authentication/Signup";
 

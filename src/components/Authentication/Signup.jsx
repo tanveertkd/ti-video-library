@@ -33,7 +33,7 @@ const SignUp = () => {
                         <input
                             type="text"
                             required
-                            placeholder="Enter your email address"
+                            placeholder="Enter your first name"
                             name="login-firstName"
                             className="login-firstName input-form"
                             onChange={(event) =>
@@ -50,7 +50,7 @@ const SignUp = () => {
                         <input
                             type="text"
                             required
-                            placeholder="Enter your email address"
+                            placeholder="Enter your last name"
                             name="login-lastName"
                             className="login-lastName input-form"
                             onChange={(event) =>
