@@ -31,7 +31,9 @@
 }
 
 @media screen and (max-width: 768px) {
+
     .nav-sidebar-container {
+        display: flex;
         position: fixed;
         bottom: 3.5rem;
         width: 95%;
@@ -50,4 +52,8 @@
         margin: 0.5rem;
         font-size: 1rem;
     }
+    
+    .sidebar-item-link {
+        color: var(--primary-bg);
+    }   
 }

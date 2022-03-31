@@ -5,6 +5,7 @@ import { OverflowMenu } from '../OverflowMenu/OverflowMenu';
 import './VideoCard.css';
 
 const VideoCard = ({ video }) => {
+
     const reduceTitleLength = (title) => {
         if (title.length > 50) return title.substring(0, 47) + '...';
         return title;
@@ -34,7 +35,7 @@ const VideoCard = ({ video }) => {
                 <div className="card-overflow-menu" onClick={toggleOverflowMenu}>
                     <i class="far fa-ellipsis-v"></i>
                     <div className={`${overflowState} overflow-container`} >
-                        <OverflowMenu />
+                        <OverflowMenu video={video}/>
                     </div>
                 </div>
             </div>

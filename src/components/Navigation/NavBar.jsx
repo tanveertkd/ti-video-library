@@ -106,7 +106,7 @@ const Navbar = () => {
                         )}
                     </li>
                     <li className="nav-main-li-res">
-                        <Link to="/products" className="nav-right-btn">
+                        <Link to="/" className="nav-right-btn" onClick={toggleHamburger}>
                             Explore
                         </Link>
                     </li>

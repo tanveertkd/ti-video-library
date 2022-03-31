@@ -1,0 +1,14 @@
+.liked-videos-parent {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Media */
+
+@media screen and (max-width: 768px) {
+    .liked-videos-parent {
+        align-items: center;
+    }
+}
