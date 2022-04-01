@@ -25,7 +25,7 @@ const WatchLaterCard = ({ video }) => {
                             className="card-btn-add card-btn"
                             onClick={() => removeFromWatchLaterHandler(video._id)}
                         >
-                            Unlike
+                            Remove
                         </button>
                     </div>
                 </div>

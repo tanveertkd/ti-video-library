@@ -2,6 +2,8 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { getLikedVideos, removeLikedVideo, setLikedVideosService } from '../services';
 import { useAuth } from './auth-context';
 
+import toast from 'react-hot-toast';
+
 const LikeContext = createContext();
 
 const LikeProvider = ({ children }) => {
@@ -16,7 +18,9 @@ const LikeProvider = ({ children }) => {
                 ...existingVideos,
                 data: response.data.likes,
             }));
+            toast.success("Added to liked videos!");
         }else{
+            toast.error("Couldn't add to liked videos!");
             console.log(response.data.errors);
         }
     };
@@ -28,6 +32,7 @@ const LikeProvider = ({ children }) => {
             ...existingVideos,
             data: response.data.likes,
         }));
+        toast.success("Removed from liked videos!");
     }
     
     const [likedVideos, setLikedVideos] = useState({
