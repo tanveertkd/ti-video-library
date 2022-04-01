@@ -1,4 +1,4 @@
-.liked-videos-parent {
+.watch-later-parent {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -27,7 +27,7 @@
 /* Media */
 
 @media screen and (max-width: 768px) {
-    .liked-videos-parent {
+    .watch-later-parent {
         align-items: center;
         height: 100vh;
     }

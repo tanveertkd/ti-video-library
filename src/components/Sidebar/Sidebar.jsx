@@ -32,8 +32,10 @@ const Sidebar = () => {
                 </li>
 
                 <li className="sidebar-item">
-                    <i class="far fa-clock sidebar-icn"></i>
-                    Watch Later
+                    <Link to="./watchlater" className="sidebar-item-link">
+                        <i class="far fa-clock sidebar-icn"></i>
+                        Watch Later
+                    </Link>
                 </li>
 
                 <li className="sidebar-item">
