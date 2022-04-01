@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
 const Sidebar = () => {
@@ -5,13 +6,17 @@ const Sidebar = () => {
         <div className="nav-sidebar-container">
             <ul className="nav-sidebar-ul">
                 <li className="sidebar-item">
-                    <i className="far fa-home-lg-alt sidebar-icn"></i>
-                    Home
+                    <Link to="/" className="sidebar-item-link">
+                        <i className="far fa-home-lg-alt sidebar-icn"></i>
+                        Home
+                    </Link>
                 </li>
 
                 <li className="sidebar-item">
-                    <i class="far fa-compass sidebar-icn"></i>
-                    Explore
+                    <Link to="/" className="sidebar-item-link">
+                        <i class="far fa-compass sidebar-icn"></i>
+                        Explore
+                    </Link>
                 </li>
 
                 <li className="sidebar-item">
@@ -20,8 +25,10 @@ const Sidebar = () => {
                 </li>
 
                 <li className="sidebar-item">
-                    <i class="far fa-thumbs-up sidebar-icn"></i>
-                    Liked Videos
+                    <Link to="/liked" className="sidebar-item-link">
+                        <i class="far fa-thumbs-up sidebar-icn"></i>
+                        Liked Videos
+                    </Link>
                 </li>
 
                 <li className="sidebar-item">

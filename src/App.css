@@ -9,9 +9,85 @@
 
 .section-two {
   flex-grow: 1;
+  display: flex;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+/* Test */
+
+.home-parent {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.sidebar-container {
+  background-color: var(--color-hover-light-grey);
+  height: 100vh;
+  border-right: 1px solid var(--color-grey);
+}
+
+.sidebar-bottom-up {
+  display: none;
+}
+
+
+/* Media */
+
+@media screen and (max-width: 768px) {
+  
+  .section-two {
+    flex-direction: column;
+  }
+
+  .home-parent {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .sidebar-bottom-up {
+      display: block;
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      padding: 0.85rem;
+      font-size: 1rem;
+      background-color: var(--primary-bg);
+      border: 1px solid var(--color-grey);
+      color: var(--color-grey);
+      transition: 0.2s linear;
+  }
+
+  .sidebar-bottom-up:active {
+      transform: scale(0.95);
+  }
+
+  .sidebar-bottom-up-active {
+      display: block;
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      padding: 0.85rem;
+      font-size: 1rem;
+      border: 1px solid var(--color-grey);
+      transition: 0.2s linear;
+      background-color: var(--color-grey);
+      color: var(--primary-bg);
+  }
+
+  .sidebar-container {
+      display: none;
+  }
+
+  .sidebar-active {
+      display: flex;
+      justify-content: center;
+      width: 80%;
+  }
+  
 }
