@@ -1,0 +1,41 @@
+.card-container {
+    margin: 1rem;
+    text-align: start;
+}
+
+.video-thumbnail-asset {
+    margin: auto;
+}
+
+.card-btn {
+    transition: 0.4s linear;
+}
+
+.card-btn:active {
+    transform: scale(0.8);
+}
+
+.card-btn:hover {
+    cursor: pointer;
+}
+
+/* Media */
+
+@media screen and (max-width: 768px) {
+    .card-container{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+    }
+
+    .video-thumbnail-asset {
+        max-width: 95%;
+        height: 70%;
+    }
+
+    .card-buttons {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}

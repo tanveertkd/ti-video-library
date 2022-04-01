@@ -6,6 +6,7 @@ import { Footer } from './components/Footer/Footer';
 
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { useLocation } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
     const [sidebar, setSidebar] = useState('sidebar-container');
@@ -24,17 +25,18 @@ function App() {
         );
     };
 
-    const location = useLocation();
+    const {pathname} = useLocation();
 
     return (
         <div className="App">
+            <Toaster />
             <div className="section-one">
                 <Navbar />
             </div>
             <div className="section-two">
                 <div className="home-parent">
                     {/* Hides the sidebar in login and signup components */}
-                    {location.pathname === '/login' || location.pathname === '/signup' ? null : (
+                    {pathname === '/login' || pathname === '/signup' ? null : (
                         <div className={sidebar}>
                             <Sidebar />
                         </div>
@@ -43,7 +45,7 @@ function App() {
                     <NavigationRoutes />
                     
                     {/* Hides the sidebar button in login and signup components */}
-                    {location.pathname === '/login' || location.pathname === '/signup' ? null : (
+                    {pathname === '/login' || pathname === '/signup' ? null : (
                         <button className={button} onClick={() => toggleSideBar()}>
                             <i class={buttonText === 'Menu' ? 'far fa-bars' : 'far fa-times'}></i>{' '}
                             {buttonText}

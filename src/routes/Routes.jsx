@@ -8,6 +8,7 @@ import { SignIn } from "../components/Authentication/Signin";
 import { SignUp } from "../components/Authentication/Signup";
 import { ProtectedRoutes } from "./ProtectedRoutes";
 import { LikedVideos } from "../pages/LikedVideos/LikedVideos";
+import { Watchlater } from "../pages/WatchLater/WatchLater";
 
 const NavigationRoutes = () => {
     return(
@@ -18,6 +19,7 @@ const NavigationRoutes = () => {
             {/* Protected Routes */}
             <Route path="/" element={<ProtectedRoutes />}>
                 <Route path="/liked" element={<LikedVideos />}/>
+                <Route path="/watchlater" element={<Watchlater />}/>
             </Route>
         </Routes>
     );
