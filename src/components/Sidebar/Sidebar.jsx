@@ -39,8 +39,10 @@ const Sidebar = () => {
                 </li>
 
                 <li className="sidebar-item">
-                    <i class="far fa-history sidebar-icn"></i>
-                    History
+                    <Link to="./history" className="sidebar-item-link">
+                        <i class="far fa-history sidebar-icn"></i>
+                        History
+                    </Link>
                 </li>
             </ul>
 

@@ -6,7 +6,7 @@ import { makeServer } from './server';
 
 import { BrowserRouter } from 'react-router-dom';
 import { VideoProvider } from './context/video-listing-context';
-import { AuthProvider, LikeProvider } from './context';
+import { AuthProvider, LikeProvider, HistoryProvider } from './context';
 import { WatchLaterProvider } from './context/watch-later-context';
 
 // Call make Server
@@ -17,11 +17,13 @@ ReactDOM.render(
         <BrowserRouter>
             <AuthProvider>
                 <VideoProvider>
-                    <WatchLaterProvider>
-                        <LikeProvider>
-                            <App />
-                        </LikeProvider>
-                    </WatchLaterProvider>
+                    <HistoryProvider>
+                        <WatchLaterProvider>
+                            <LikeProvider>
+                                <App />
+                            </LikeProvider>
+                        </WatchLaterProvider>
+                    </HistoryProvider>
                 </VideoProvider>
             </AuthProvider>
         </BrowserRouter>

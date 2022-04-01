@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { thumbnailLink } from '../../utils/video-details-services';
 import { OverflowMenu } from '../OverflowMenu/OverflowMenu';
+import { useNavigate } from 'react-router-dom';
 
 import './VideoCard.css';
+import { useHistory } from '../../context';
 
 const VideoCard = ({ video }) => {
+    const { setHistoryHandler } = useHistory();
 
     const reduceTitleLength = (title) => {
         if (title.length > 50) return title.substring(0, 47) + '...';
@@ -19,8 +22,17 @@ const VideoCard = ({ video }) => {
         );
     };
 
+    const navigate = useNavigate();
+
     return (
-        <div className="video-card-container" key={video._id}>
+        <div
+            className="video-card-container"
+            key={video._id}
+            onClick={() => {
+                navigate(`/watch/${video._id}`);
+                setHistoryHandler(video);
+            }}
+        >
             <img
                 src={thumbnailLink(video._id)}
                 alt="Title asset"
@@ -34,8 +46,8 @@ const VideoCard = ({ video }) => {
                 </div>
                 <div className="card-overflow-menu" onClick={toggleOverflowMenu}>
                     <i class="far fa-ellipsis-v"></i>
-                    <div className={`${overflowState} overflow-container`} >
-                        <OverflowMenu video={video}/>
+                    <div className={`${overflowState} overflow-container`}>
+                        <OverflowMenu video={video} />
                     </div>
                 </div>
             </div>
