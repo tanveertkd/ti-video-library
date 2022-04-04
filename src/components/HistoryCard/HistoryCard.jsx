@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useHistory } from '../../context';
 import { thumbnailLink } from '../../utils/video-details-services';
 import './HistoryCard.css';
@@ -9,8 +10,10 @@ const HistoryCard = ({ video }) => {
         if (title.length > 50) return title.substring(0, 47) + '...';
         return title;
     };
+
+    const navigate = useNavigate();
     
-    const {removeFromHistoryHandler} = useHistory();
+    const { setHistoryHandler, removeFromHistoryHandler} = useHistory();
 
     return (
         <div className="card">
@@ -21,7 +24,12 @@ const HistoryCard = ({ video }) => {
                     <p className="card-body">{reduceTitleLength(description)}</p>
                     <p className="card-body">{creator}</p>
                     <div className="card-buttons">
-                        <button className="card-btn-buy card-btn">Watch Now</button>
+                        <button className="card-btn-buy card-btn"
+                        onClick={() => {
+                            navigate(`/watch/${video._id}`);
+                            setHistoryHandler(video);
+                        }}
+                        >Watch Now</button>
                         <button className="card-btn-add card-btn" onClick={() => removeFromHistoryHandler(_id)}>Remove</button>
                     </div>
                 </div>

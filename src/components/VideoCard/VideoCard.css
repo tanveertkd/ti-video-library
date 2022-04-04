@@ -5,6 +5,13 @@
     height: fit-content;
     margin: 1rem;
     cursor: pointer;
+    border-radius: 0.2rem;
+    transition: 0.4s linear;
+}
+
+.video-card-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--color-hover-grey);
 }
 
 .video-thumbnail-asset {
@@ -55,6 +62,10 @@
     color: var(--primary-bg);
 }
 
+.overflow-icn {
+    padding: 0.5rem;
+}
+
 /* Media */
 
 @media screen and (max-width: 768px) {
@@ -65,6 +76,15 @@
     .video-thumbnail-asset {
         width: 24rem;
         height: 12.5rem;
+    }
+
+    .video-card-body {
+        padding: 0.5rem;
+        justify-content: space-between;
+    }
+
+    .overflow-icn {
+        padding: 1rem;
     }
 }
 

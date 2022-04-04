@@ -9,6 +9,7 @@ const History = () => {
 
     return (
         <div className="history-parent">
+            <h2>History</h2>
             {history.data.length>0 ? (
                 <button className='btn-cta' onClick={clearHistoryHandler}>Clear History</button>
             ) : ""}

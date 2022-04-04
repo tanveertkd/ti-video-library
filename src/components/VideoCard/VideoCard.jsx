@@ -25,27 +25,30 @@ const VideoCard = ({ video }) => {
     const navigate = useNavigate();
 
     return (
-        <div
-            className="video-card-container"
-            key={video._id}
-            onClick={() => {
-                navigate(`/watch/${video._id}`);
-                setHistoryHandler(video);
-            }}
-        >
+        <div className="video-card-container" key={video._id}>
             <img
                 src={thumbnailLink(video._id)}
                 alt="Title asset"
                 className="video-thumbnail-asset"
+                onClick={() => {
+                    navigate(`/watch/${video._id}`);
+                    setHistoryHandler(video);
+                }}
             />
             <div className="video-card-body">
                 <img src={video.creatorPhoto} alt="Thumbnail asset" className="creator-acc-thumb" />
-                <div className="video-details">
+                <div
+                    className="video-details"
+                    onClick={() => {
+                        navigate(`/watch/${video._id}`);
+                        setHistoryHandler(video);
+                    }}
+                >
                     <p className="video-title">{reduceTitleLength(video.title)}</p>
                     <p className="creator-name">{video.creator}</p>
                 </div>
                 <div className="card-overflow-menu" onClick={toggleOverflowMenu}>
-                    <i class="far fa-ellipsis-v"></i>
+                    <i class="far fa-ellipsis-v overflow-icn"></i>
                     <div className={`${overflowState} overflow-container`}>
                         <OverflowMenu video={video} />
                     </div>

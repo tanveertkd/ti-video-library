@@ -1,3 +1,5 @@
+import toast from 'react-hot-toast'
+
 import { createContext, useContext, useReducer } from 'react';
 import {
     clearHistoryService,
@@ -7,7 +9,7 @@ import {
 } from '../services';
 import { useAuth } from './';
 import { historyReducer } from '../reducers';
-import toast from 'react-hot-toast'
+
 const HistoryContext = createContext();
 
 const HistoryProvider = ({ children }) => {
