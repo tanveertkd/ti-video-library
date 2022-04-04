@@ -6,41 +6,55 @@ const Sidebar = () => {
         <div className="nav-sidebar-container">
             <ul className="nav-sidebar-ul">
                 <li className="sidebar-item">
-                    <Link to="/" className="sidebar-item-link">
-                        <i className="far fa-home-lg-alt sidebar-icn"></i>
-                        Home
-                    </Link>
+                    <label for="sidebar-item-link">
+                        <Link to="/" className="sidebar-item-link">
+                            <i className="far fa-home-lg-alt sidebar-icn"></i>
+                            Home
+                        </Link>
+                    </label>
                 </li>
 
                 <li className="sidebar-item">
-                    <Link to="/" className="sidebar-item-link">
-                        <i class="far fa-compass sidebar-icn"></i>
-                        Explore
-                    </Link>
+                    <label for="sidebar-item-link">
+                        <Link to="/" className="sidebar-item-link">
+                            <i class="far fa-compass sidebar-icn"></i>
+                            Explore
+                        </Link>
+                    </label>
                 </li>
 
                 <li className="sidebar-item">
-                    <i class="far fa-list sidebar-icn"></i>
-                    Playlists
+                    <label for="sidebar-item-link">
+                        <i class="far fa-list sidebar-icn"></i>
+                        Playlists
+                    </label>
                 </li>
 
                 <li className="sidebar-item">
-                    <Link to="/liked" className="sidebar-item-link">
-                        <i class="far fa-thumbs-up sidebar-icn"></i>
-                        Liked Videos
-                    </Link>
+                    <label for="sidebar-item-link">
+                        <Link to="/liked" className="sidebar-item-link">
+                            <i class="far fa-thumbs-up sidebar-icn"></i>
+                            Liked Videos
+                        </Link>
+                    </label>
                 </li>
 
                 <li className="sidebar-item">
-                    <Link to="./watchlater" className="sidebar-item-link">
-                        <i class="far fa-clock sidebar-icn"></i>
-                        Watch Later
-                    </Link>
+                    <label for="sidebar-item-link">
+                        <Link to="./watchlater" className="sidebar-item-link">
+                            <i class="far fa-clock sidebar-icn"></i>
+                            Watch Later
+                        </Link>
+                    </label>
                 </li>
 
                 <li className="sidebar-item">
-                    <i class="far fa-history sidebar-icn"></i>
-                    History
+                    <label for="sidebar-item-link">
+                        <Link to="./history" className="sidebar-item-link">
+                            <i class="far fa-history sidebar-icn"></i>
+                            History
+                        </Link>
+                    </label>
                 </li>
             </ul>
 
