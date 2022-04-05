@@ -13,7 +13,7 @@ const WatchVideo = () => {
     const { watchLaterState, addToWatchLaterHandler, removeFromWatchLaterHandler } =
         useWatchLater();
 
-    useEffect(() => (async () => getVideoByIdHandler(videoId))(), []);
+    useEffect(() => (async () => getVideoByIdHandler(videoId))());
 
     const { title, description, creator, creatorPhoto } = videoListState.singleVideo;
 
