@@ -5,6 +5,13 @@ const videoListReducer = (state, action) => {
                 ...state,
                 data: action.payload
             }
+        
+        case "SINGLE_VIDEO":
+            return{
+                ...state,
+                singleVideo: action.payload
+            }
+
         default:
             return{
                 ...state

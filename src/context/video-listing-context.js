@@ -1,13 +1,22 @@
 import { createContext, useContext, useEffect, useReducer } from 'react';
-import { getVidoes } from '../services';
+import { getVidoes, getVideoById } from '../services';
 
 import { videoListReducer } from '../reducers';
 
 const VideoListingContext = createContext();
 
 const VideoProvider = ({ children }) => {
+    
+    const getVideoByIdHandler = async (videoId) => {
+        const response = await getVideoById(videoId);
+        if(response.status === 200) {
+            videoListDispatch({type: 'SINGLE_VIDEO', payload: response.data.video});
+        }
+    }
+
     const [videoListState, videoListDispatch] = useReducer(videoListReducer, {
         data: [],
+        singleVideo: [],
     });
 
     useEffect(
@@ -27,7 +36,7 @@ const VideoProvider = ({ children }) => {
     );
 
     return (
-        <VideoListingContext.Provider value={{ videoListState, videoListDispatch }}>
+        <VideoListingContext.Provider value={{ videoListState, videoListDispatch, getVideoByIdHandler }}>
             {children}
         </VideoListingContext.Provider>
     );
