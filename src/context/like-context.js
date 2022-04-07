@@ -12,16 +12,20 @@ const LikeProvider = ({ children }) => {
 
     // Handle Likes
     const likeVideoHandler = async (video) => {
-        const response = await setLikedVideosService(video, AUTH_TOKEN);
-        if(!response.doesExist){
-            setLikedVideos((existingVideos) => ({
-                ...existingVideos,
-                data: response.data.likes,
-            }));
-            toast.success("Added to liked videos!");
+        if (auth) {
+            const response = await setLikedVideosService(video, AUTH_TOKEN);
+            if (!response.doesExist) {
+                setLikedVideos((existingVideos) => ({
+                    ...existingVideos,
+                    data: response.data.likes,
+                }));
+                toast.success('Added to liked videos!');
+            } else {
+                toast.error("Couldn't add to liked videos!");
+                console.log(response.data.errors);
+            }
         }else{
-            toast.error("Couldn't add to liked videos!");
-            console.log(response.data.errors);
+            toast.error("You must be logged in to like a video.");
         }
     };
 
@@ -32,17 +36,17 @@ const LikeProvider = ({ children }) => {
             ...existingVideos,
             data: response.data.likes,
         }));
-        toast.success("Removed from liked videos!");
-    }
-    
+        toast.success('Removed from liked videos!');
+    };
+
     const [likedVideos, setLikedVideos] = useState({
         data: [],
     });
 
     useEffect(
-        () => 
+        () =>
             (async () => {
-                if(auth){
+                if (auth) {
                     try {
                         const response = await getLikedVideos(AUTH_TOKEN);
                         setLikedVideos((existingVideos) => ({
@@ -52,15 +56,17 @@ const LikeProvider = ({ children }) => {
                     } catch (error) {
                         console.log('Error fetching liked videos', error);
                     }
-                }else{
-                    console.log("Needs authentication")
+                } else {
+                    console.log('Needs authentication');
                 }
             })(),
         [AUTH_TOKEN, setLikedVideos, auth],
     );
 
     return (
-        <LikeContext.Provider value={{ likedVideos, setLikedVideos, likeVideoHandler, removeFromLikes }}>
+        <LikeContext.Provider
+            value={{ likedVideos, setLikedVideos, likeVideoHandler, removeFromLikes }}
+        >
             {children}
         </LikeContext.Provider>
     );

@@ -1,0 +1,153 @@
+.watch-container {
+    display: flex;
+}
+
+.watch-container-left {
+    padding: 1rem;
+    width: 60vw;
+}
+
+.video-player-frame {
+    width: 62.5rem;
+    height: 31.25rem;
+}
+
+.video-actions-panel {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.details-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-container {
+    display: flex;
+    padding: 0.5rem;
+}
+
+.video-action {
+    margin-right: 1rem;
+    font-size: 1.05rem;
+}
+
+.icn {
+    margin-right: 0.5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.creator-acc-thumb {
+    width: 48px;
+    height: 48px;
+}
+
+.video-card-body-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.video-card-head {
+    padding: 0;
+}
+
+.video-card-body {
+    margin: 0.5rem 0;
+    font-size: 1.05rem;
+    padding: 0.5rem
+}
+
+.watch-container-right {
+    width: 20vw
+}
+
+.notes-container {
+    width: 100%;
+}
+
+.notes-input {
+    width: 80%;
+}
+
+/* Media */
+
+@media screen and (max-width: 1440px) {
+    .watch-container{
+        width: 100%;
+    }
+    
+    .watch-container-left {
+        width: 65%;
+    }
+
+    .video-player-frame{
+        width: 40vw;
+        height: 15rem;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .watch-container{
+        width: 100vw;
+    }
+    
+    .watch-container-left {
+        width: 50vw;
+    }
+
+    .video-player-frame{
+        width: 50vw;
+        height: 15rem;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .watch-video-head {
+        margin: 0.5rem
+    }
+
+    .watch-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+    }
+
+    .watch-container-left{
+        width: 100%;
+    }
+
+    .video-player-frame{
+        width: 100vw;
+        height: 15rem;
+        margin: auto;
+    }
+
+    .video-actions-panel {
+        padding: 0.5rem;
+    }
+
+    .details-top{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .action-container {
+        width: 100%;
+    }
+
+    .watch-container-right {
+        width: 100vw;
+        margin: 1rem auto;
+    }
+}

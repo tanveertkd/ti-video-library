@@ -12,21 +12,28 @@ const WatchLaterProvider = ({ children }) => {
     const { auth } = useAuth();
 
     const addToWatchLaterHandler = async (video) => {
-        const response = await addToWatchLater(video, AUTH_TOKEN);
-        if (response.status === 201) {
-            watchLaterDispatch({ type: 'ADD_TO_WATCH_LATER', payload: response.data.watchlater });
-            toast.success("Added to watch later!");
-        } else if (response.status === 409) {
-            watchLaterDispatch({ type: 'ALREADY_EXISTS' });
-            toast.error("Already added to watch later!");
+        if (auth) {
+            const response = await addToWatchLater(video, AUTH_TOKEN);
+            if (response.status === 201) {
+                watchLaterDispatch({
+                    type: 'ADD_TO_WATCH_LATER',
+                    payload: response.data.watchlater,
+                });
+                toast.success('Added to watch later!');
+            } else if (response.status === 409) {
+                watchLaterDispatch({ type: 'ALREADY_EXISTS' });
+                toast.error('Already added to watch later!');
+            }
+        } else {
+            toast.error('You must be logged in first');
         }
     };
 
     const removeFromWatchLaterHandler = async (id) => {
         const response = await removeFromWatchLater(id, AUTH_TOKEN);
-        if (response.status === 200){
+        if (response.status === 200) {
             watchLaterDispatch({ type: 'LOAD_AFTER_DELETE', payload: response.data.watchlater });
-            toast.success("Removed From watch later!");
+            toast.success('Removed From watch later!');
         }
     };
 
