@@ -11,6 +11,8 @@ import { LikedVideos } from "../pages/LikedVideos/LikedVideos";
 import { Watchlater } from "../pages/WatchLater/WatchLater";
 import { WatchVideo } from "../pages/WatchVideo/WatchVideo";
 import { History } from "../pages/History/History";
+import { Playlist } from "../pages/Playlists/Playlist";
+import { SinglePlaylist } from "../pages/Playlists/SinglePlaylist/SinglePlaylist";
 
 const NavigationRoutes = () => {
     return(
@@ -24,6 +26,8 @@ const NavigationRoutes = () => {
                 <Route path="/liked" element={<LikedVideos />}/>
                 <Route path="/watchlater" element={<Watchlater />}/>
                 <Route path="/history" element={<History />} />
+                <Route path="/playlists" element={<Playlist />} />
+                <Route path="playlists/:playlistId" element={<SinglePlaylist />} />
             </Route>
         </Routes>
     );

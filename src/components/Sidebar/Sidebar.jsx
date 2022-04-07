@@ -25,8 +25,10 @@ const Sidebar = () => {
 
                 <li className="sidebar-item">
                     <label for="sidebar-item-link">
-                        <i class="far fa-list sidebar-icn"></i>
-                        Playlists
+                        <Link to="/playlists" className="sidebar-item-link">
+                            <i class="far fa-list sidebar-icn"></i>
+                            Playlists
+                        </Link>
                     </label>
                 </li>
 

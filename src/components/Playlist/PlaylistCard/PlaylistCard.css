@@ -1,0 +1,35 @@
+.playlist-card-parent {
+    border: 1px solid var(--color-hover-light-grey);
+    border-radius: 0.3rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.card-thumb {
+    position: relative;
+}
+
+.playlist-thumb {
+    width: 20rem;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+
+.playlist-length {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--primary-bg);
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+    font-size: 1.1rem;
+}
+
+.card-title {
+    text-align: start;
+    padding: 0.5rem;
+}

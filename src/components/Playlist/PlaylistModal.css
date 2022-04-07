@@ -1,0 +1,59 @@
+.playlist-modal {
+    border: 1px solid var(--color-hover-light-grey);
+    width: 20rem;
+    height: max-content;
+    padding: 1rem;
+    background-color: var(--primary-bg);
+    border-radius: 0.4rem;
+}
+
+.modal-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-top p {
+    padding: 0;
+    margin: 0;
+}
+
+.dismiss-modal {
+    display: none;
+}
+
+.modal-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0;
+}
+
+.modal-bottom-input-inactive {
+    display: none;
+}
+
+.modal-bottom-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.playlist-name[type=text] {
+    padding: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-create-playlist {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--color-grey);
+    color: var(--primary-bg);
+    border: none;
+    margin: 0.25rem 0;
+}
+
+.create-cta {
+    background-color: var(--primary-bg);
+    color: var(--color-grey);
+    padding: 0.5rem;
+    border: 1px solid var(--color-grey);
+}
