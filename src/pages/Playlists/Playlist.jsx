@@ -11,7 +11,7 @@ const Playlist = () => {
         <div className="playlist-container">
             <h2>Playlists</h2>
             <div className="playlist">
-                {playlist.length > 0 ? (
+                {playlist?.length > 0 ? (
                     playlist?.map((playlistItem) => (
                         <div key={playlistItem._id}>
                             <PlaylistCard playlist={playlistItem} />

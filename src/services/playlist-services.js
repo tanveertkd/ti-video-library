@@ -73,6 +73,21 @@ const addToPlaylistService = async (encodedToken, playlistId, video) => {
     }
 };
 
+const deletePlaylist = async (encodedToken, playlistId) => {
+    try{
+        const response = await axios.delete(`/api/user/playlists/${playlistId}`, {
+            headers: {
+                authorization: encodedToken
+            }
+        })
+        if(response.status === 200) {
+            return response
+        }
+    }catch(error) {
+        console.log("Couldn't delete playlist", error.response)
+    }
+}
+
 const deleteVideoFromPlaylist = async (encodedToken, playlistId, videoId) => {
     try {
         const response = await axios.delete(`/api/user/playlists/${playlistId}/${videoId}`, {
@@ -92,6 +107,7 @@ export {
     getPlaylistsService,
     createPlaylistService,
     addToPlaylistService,
+    deletePlaylist,
     deleteVideoFromPlaylist,
     getPlaylistByIdService,
 };

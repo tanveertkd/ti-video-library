@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 import {
     addToPlaylistService,
     createPlaylistService,
+    deletePlaylist,
     deleteVideoFromPlaylist,
     getPlaylistByIdService,
     getPlaylistsService,
@@ -46,6 +47,13 @@ const PlaylistProvider = ({ children }) => {
         }
     };
 
+    const deletePlaylistHandler = async ( playlistId ) => {
+        if(auth){
+            const response = await deletePlaylist(AUTH_TOKEN, playlistId);
+            playlistDispatcher({type: 'AFTER_DELETE', payload: response.data.playlist})
+        }
+    }
+
     const deleteFromPlaylistHandler = async (playlistId, videoId) => {
         if (auth) {
             const response = await deleteVideoFromPlaylist(AUTH_TOKEN, playlistId, videoId);
@@ -82,6 +90,7 @@ const PlaylistProvider = ({ children }) => {
                 getPlaylistById,
                 handleNewPlaylist,
                 addToPlaylistHandler,
+                deletePlaylistHandler,
                 deleteFromPlaylistHandler,
             }}
         >

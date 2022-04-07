@@ -31,9 +31,8 @@ const PlaylistModal = ({ video, toggleModalVisibility }) => {
             <hr />
             <div className="modal-main">
                 {playlistState?.playlist?.map((item) => (
-                    <label for="modal-checkbox">
+                    <label for="modal-checkbox" key={item._id}>
                         <input
-                            key={item._id}
                             type="checkbox"
                             name="checkbox"
                             id="modal-checkbox"
@@ -50,11 +49,11 @@ const PlaylistModal = ({ video, toggleModalVisibility }) => {
                     <input
                         type="text"
                         className="playlist-name"
+                        required
                         value={userInput.title}
                         onChange={(event) =>
                             setUserInput({ ...userInput, title: event.target.value })
                         }
-                        required
                         placeholder='Enter playlist title'
                     />
                     <button

@@ -25,6 +25,12 @@ const playlistReducer = (state, action) => {
                 exists: action.payload.exists,
             };
 
+        case 'AFTER_DELETE':
+            return {
+                ...state,
+                playlist: action.payload,
+            };
+
         case 'DELETE_FROM_PLAYLIST':
             return {
                 ...state,
