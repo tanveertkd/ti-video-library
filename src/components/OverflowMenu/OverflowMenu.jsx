@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import { useLike, useAuth, useWatchLater } from '../../context';
 import { useNavigate } from 'react-router-dom';
 import './OverflowMenu.css';
-import { PlaylistModal } from '../Playlist/PlaylistModal';
 
 const OverflowMenu = ({ video }) => {
     const { likedVideos, likeVideoHandler, removeFromLikes } = useLike();
@@ -14,10 +12,6 @@ const OverflowMenu = ({ video }) => {
 
     const alreadyLiked = likedVideos.data?.find((item) => item._id === video._id);
     const alreadyInWatchLater = watchLaterState.data?.find((item) => item._id === video._id);
-
-    const [modalVisibility, toggleModalVisibility] = useState(false);
-
-    const toggleModal = () => toggleModalVisibility((modalVisibility) => !modalVisibility);
 
     return (
         <div>
