@@ -12,3 +12,9 @@ It uses ReactJS for the front-end and [Mockbee](https://mockbee.netlify.app/) as
     - Watch later 
     - Liked videos
     - Playlists
+
+## Screenshots
+![videolisting](https://raw.githubusercontent.com/tanveertkd/ti-video-library/documentation/README/1.png)  
+![videolisting-res](https://raw.githubusercontent.com/tanveertkd/ti-video-library/documentation/README/1-res.png)  
+![watch-video](https://raw.githubusercontent.com/tanveertkd/ti-video-library/documentation/README/2.png)   
+![playlist-res](https://raw.githubusercontent.com/tanveertkd/ti-video-library/documentation/README/3-res.png)
