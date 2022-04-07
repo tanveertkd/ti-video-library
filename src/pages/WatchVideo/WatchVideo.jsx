@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { PlaylistModal } from '../../components/Playlist/PlaylistModal';
 import { useLike, useWatchLater } from '../../context';
 import { useVideoProvider } from '../../context/video-listing-context';
 import { embeddedLink } from '../../utils/';
@@ -19,6 +20,13 @@ const WatchVideo = () => {
 
     const alreadyLiked = likedVideos.data?.find((item) => item._id === videoId);
     const alreadyInWatchLater = watchLaterState.data?.find((item) => item._id === videoId);
+
+    const [modalVisibility, toggleModalVisibility] = useState(false);
+
+    const toggleModal = () =>
+        toggleModalVisibility(
+            (modalVisibility) => !modalVisibility,
+        );
 
     return (
         <div>
@@ -80,8 +88,8 @@ const WatchVideo = () => {
                                             {alreadyInWatchLater ? 'Remove' : 'Watch Later'}
                                         </label>
                                     </div>
-                                    <div className="video-action">
-                                        <label for="action-icn">
+                                    <div className="video-action modal-parent">
+                                        <label for="action-icn" onClick={() => toggleModal()}>
                                             <i class="far fa-list action-icn icn"></i>
                                             Save
                                         </label>
@@ -102,6 +110,17 @@ const WatchVideo = () => {
                         </div>
                     </div>
                 </div>
+
+                {modalVisibility && (
+                    <div className="modal-active">
+                        <PlaylistModal
+                            modalVisibility={modalVisibility}
+                            toggleModalVisibility={toggleModalVisibility}
+                            video={videoListState.singleVideo}
+                        />
+                    </div>
+                )}
+
                 <div className="watch-container-right">
                     <div className="notes-container">
                         <div className="notes-header">Make a note!</div>

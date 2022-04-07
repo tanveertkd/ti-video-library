@@ -121,7 +121,7 @@ export const addVideoToPlaylistHandler = function (schema, request) {
       );
     }
     playlist.videos.push(video);
-    return new Response(201, {}, { playlist });
+    return new Response(201, {}, { playlists: user.playlists });
   }
   return new Response(
     404,

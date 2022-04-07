@@ -76,6 +76,32 @@
     width: 80%;
 }
 
+.dismiss-modal {
+    display: none;
+}
+
+.modal-inactive {
+    display: none;
+}
+
+.modal-parent {
+    position: relative;
+}
+
+.modal-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, .5);
+    transition: opacity .2s ease;
+}
+
 /* Media */
 
 @media screen and (max-width: 1440px) {
