@@ -38,7 +38,7 @@ const WatchVideo = () => {
                         src={embeddedLink(videoId)}
                         title="YouTube video player"
                         frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                         allowFullScreen
                         loading="lazy"
                         className="video-player-frame"
@@ -121,7 +121,7 @@ const WatchVideo = () => {
                     </div>
                 )}
 
-                <div className="watch-container-right">
+                {/* <div className="watch-container-right">
                     <div className="notes-container">
                         <div className="notes-header">Make a note!</div>
                         <div className="note">
@@ -134,7 +134,7 @@ const WatchVideo = () => {
                             <i class="fas fa-paper-plane"></i>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );

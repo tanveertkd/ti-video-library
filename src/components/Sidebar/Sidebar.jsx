@@ -1,5 +1,11 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
+
+const active = {
+    fontWeight: 'bold',
+    textDecoration: 'underline',
+    textUnderlineOffset: '0.4rem',
+};
 
 const Sidebar = () => {
     return (
@@ -7,55 +13,75 @@ const Sidebar = () => {
             <ul className="nav-sidebar-ul">
                 <li className="sidebar-item">
                     <label for="sidebar-item-link">
-                        <Link to="/" className="sidebar-item-link">
+                        <NavLink
+                            to="/"
+                            className="sidebar-item-link"
+                            style={({ isActive }) => (isActive ? active : undefined)}
+                        >
                             <i className="far fa-home-lg-alt sidebar-icn"></i>
                             Home
-                        </Link>
+                        </NavLink>
                     </label>
                 </li>
 
-                <li className="sidebar-item">
+                {/* <li className="sidebar-item">
                     <label for="sidebar-item-link">
                         <Link to="/" className="sidebar-item-link">
                             <i class="far fa-compass sidebar-icn"></i>
                             Explore
                         </Link>
                     </label>
-                </li>
+                </li> */}
 
                 <li className="sidebar-item">
                     <label for="sidebar-item-link">
-                        <Link to="/playlists" className="sidebar-item-link">
+                        <NavLink
+                            to="/playlists"
+                            className="sidebar-item-link"
+                            style={({ isActive }) => (isActive ? active : undefined)}
+                        >
                             <i class="far fa-list sidebar-icn"></i>
                             Playlists
-                        </Link>
+                        </NavLink>
                     </label>
                 </li>
 
                 <li className="sidebar-item">
                     <label for="sidebar-item-link">
-                        <Link to="/liked" className="sidebar-item-link">
+                        <NavLink
+                            to="/liked"
+                            className="sidebar-item-link"
+                            style={({ isActive }) => (isActive ? active : undefined)}
+                        >
                             <i class="far fa-thumbs-up sidebar-icn"></i>
                             Liked Videos
-                        </Link>
+                        </NavLink>
                     </label>
                 </li>
 
                 <li className="sidebar-item">
                     <label for="sidebar-item-link">
-                        <Link to="./watchlater" className="sidebar-item-link">
+                        <NavLink
+                            to="./watchlater"
+                            className="sidebar-item-link"
+                            style={({ isActive }) => (isActive ? active : undefined)}
+                        >
                             <i class="far fa-clock sidebar-icn"></i>
                             Watch Later
-                        </Link>
+                        </NavLink>
                     </label>
                 </li>
 
                 <li className="sidebar-item">
                     <label for="sidebar-item-link">
-                        <Link to="./history" className="sidebar-item-link">
+                        <NavLink
+                            to="./history"
+                            className="sidebar-item-link"
+                            style={({ isActive }) => (isActive ? active : undefined)}
+                        >
                             <i class="far fa-history sidebar-icn"></i>
                             History
-                        </Link>
+                        </NavLink>
                     </label>
                 </li>
             </ul>

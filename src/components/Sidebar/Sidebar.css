@@ -1,7 +1,7 @@
 .nav-sidebar-container {
     flex-direction: column;
     width: 250px;
-    background-color: var(--color-hover-light-grey);
+    background-color: var(--color-grey);
     height: fit-content;
 }
 
@@ -16,6 +16,12 @@
     padding: 1.5rem;
     cursor: pointer;
     font-size: 1.15rem;
+    border-bottom: 1px solid var(--color-text-lighter-grey);
+}
+
+.sidebar-item-link {
+    color: var(--primary-bg);
+    letter-spacing: 0.025em;
 }
 
 .sidebar-icn {
@@ -31,7 +37,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
     .nav-sidebar-container {
         display: flex;
         position: fixed;
@@ -52,8 +57,8 @@
         margin: 0.5rem;
         font-size: 1rem;
     }
-    
+
     .sidebar-item-link {
         color: var(--primary-bg);
-    }   
+    }
 }

@@ -52,4 +52,76 @@ export const videos = [
     creator: "ONE Championship",
     creatorPhoto: "https://yt3.ggpht.com/ytc/AKedOLScNYY6fyIIWud-LrFhb9qQuYD6qihuLM5r5kfnPA=s48-c-k-c0x00ffffff-no-rj"
   },
+  {
+    _id: "ngns_dZbRm4",
+    title: "Former SHAOLIN MONK Xie Wei Is CRUSHING Opponents In MMA",
+    description:
+      "Get to know Shaolin Monk-turned-MMA fighter Xie Wei ahead of \"The Hunter's\" return to action against #5 flyweight contender Reece McLaren at ONE 158 on 3 June!",
+    creator: "ONE Championship",
+    creatorPhoto: "https://yt3.ggpht.com/ytc/AKedOLScNYY6fyIIWud-LrFhb9qQuYD6qihuLM5r5kfnPA=s48-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    _id: "xuI-m14DskE",
+    title: "Best KO Combos in UFC History",
+    description:
+      "Take a look back at 15 of the best knockout combinations in UFC history to date.",
+    creator: "UFC - Ultimate Fighting Championship",
+    creatorPhoto: "https://yt3.ggpht.com/ytc/AKedOLShQf5GGxZE8iQ-Wk1fplpaeMxP_7ITDmNHvXzdvq0=s48-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    _id: "UQSPNWA4ZOg",
+    title: "Jenelyn Olsim vs. Julie Mezabarba | ONE Championship Full Fight",
+    description:
+      "Filipina phenom Jenelyn Olsim took on Brazilian star Julie Mezabarba in a back-and-forth women's atomweight mixed martial arts battle at ONE 158!",
+    creator: "ONE Championship",
+    creatorPhoto: "https://yt3.ggpht.com/ytc/AKedOLScNYY6fyIIWud-LrFhb9qQuYD6qihuLM5r5kfnPA=s48-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    _id: "ZstTuT9SmOU",
+    title: "UFC 275 Countdown: Full Episode",
+    description:
+      "UFC 275 Countdown previews two title bouts, as light heavyweight king Glover Teixeira puts his belt on the line against Jiri Prochazka, and flyweight champion Valentina Shevchenko takes on Taila Santos. Plus, Zhang Weili rematches Joanna Jedrzejczyk.",
+    creator: "UFC - Ultimate Fighting Championship",
+    creatorPhoto: "https://yt3.ggpht.com/ytc/AKedOLShQf5GGxZE8iQ-Wk1fplpaeMxP_7ITDmNHvXzdvq0=s48-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    _id: "pVpJwya8GGk",
+    title: "On This Day: Khabib Nurmagomedov vs Rafael dos Anjos | Free Fight",
+    description:
+      "On this day six years ago, lightweight champion Khabib Nurmagomedov faced off with Rafael dos Anjos at a Fight Night event in Orlando.",
+    creator: "UFC - Ultimate Fighting Championship",
+    creatorPhoto: "https://yt3.ggpht.com/ytc/AKedOLShQf5GGxZE8iQ-Wk1fplpaeMxP_7ITDmNHvXzdvq0=s48-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    _id: "EHwWO0kWkg0",
+    title: "Valentina Shevchenko's Championship Reign",
+    description:
+      "Valentina Shevchenko has now been the UFC flyweight champion for over 3 years after earning the belt against Joanna Jedrzejczyk at UFC 231 in 2018.",
+    creator: "UFC - Ultimate Fighting Championship",
+    creatorPhoto: "https://yt3.ggpht.com/ytc/AKedOLShQf5GGxZE8iQ-Wk1fplpaeMxP_7ITDmNHvXzdvq0=s48-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    _id: "v1i8wyJldL8",
+    title: "ALL ACCESS: Davis vs. Romero | Epilogue | Full Episode (TV14) | SHOWTIME PPV",
+    description:
+      "The Emmy® Award winning series takes viewers behind the scenes at Barclays Center in Brooklyn as undefeated three-division champion and boxing superstar Gervonta “Tank” Davis takes on heated rival Rolando “Rolly” Romero in a long-awaited showdown.",
+    creator: "SHOWTIME Sports",
+    creatorPhoto: "https://yt3.ggpht.com/ytc/AKedOLT-H6u1zEZngWRGNbEEv0ZxeHjeqSSEmJoGSDPW=s48-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    _id: "PKzuBCOI2mk",
+    title: "UFC 275 Countdown: Teixeira vs Prochazka",
+    description:
+      "UFC 275 Countdown previews the light heavyweight title fight main event between current champion Glover Teixeira and the challenger Jiri Prochazka. See these athletes train and prepare for their bouts on Saturday, June 11.",
+    creator: "UFC - Ultimate Fighting Championship",
+    creatorPhoto: "https://yt3.ggpht.com/ytc/AKedOLShQf5GGxZE8iQ-Wk1fplpaeMxP_7ITDmNHvXzdvq0=s48-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    _id: "6qRMT6c7WK0",
+    title: "George Kambosos vs. Devin Haney • FULL POST FIGHT PRESS CONFERENCE • Top Rank Boxing",
+    description:
+      "BOTH BOXERS AFTER FIGHTER - George Kambosos vs. Devin Haney • FULL POST FIGHT PRESS CONFERENCE • Top Rank Boxing",
+    creator: "SecondsOut",
+    creatorPhoto: "https://yt3.ggpht.com/ytc/AKedOLRWkfby39fz137SaECyVhEw6Myn5-zfKyFl6GL29g=s48-c-k-c0x00ffffff-no-rj"
+  },
 ];

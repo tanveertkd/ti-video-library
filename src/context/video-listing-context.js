@@ -17,6 +17,7 @@ const VideoProvider = ({ children }) => {
     const [videoListState, videoListDispatch] = useReducer(videoListReducer, {
         data: [],
         singleVideo: [],
+        searchedVideo: ''
     });
 
     useEffect(
