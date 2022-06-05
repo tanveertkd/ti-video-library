@@ -17,27 +17,31 @@ const PlaylistModal = ({ video, toggleModalVisibility }) => {
         description: '',
     });
 
-    const { playlistState, handleNewPlaylist, addToPlaylistHandler } =
-        usePlaylist();
+    const { playlistState, handleNewPlaylist, addToPlaylistHandler } = usePlaylist();
+
+    const doesVideoExist = (playlist) => playlist.videos.find((singleVideo) => singleVideo._id === video._id);
 
     return (
         <div className="playlist-modal">
             <div className="modal-top">
                 <p>Save To</p>
                 <div className="dismiss-icn">
-                    <i class="far fa-times-circle" onClick={() => toggleModalVisibility(false)}></i>
+                    <i
+                        className="far fa-times-circle dismiss-cross-icn"
+                        onClick={() => toggleModalVisibility(false)}
+                    ></i>
                 </div>
             </div>
             <hr />
             <div className="modal-main">
                 {playlistState?.playlist?.map((item) => (
-                    <label for="modal-checkbox" key={item._id}>
+                    <label className="modal-label" key={item._id}>
                         <input
                             type="checkbox"
                             name="checkbox"
-                            id="modal-checkbox"
                             className="modal-checkbox"
                             value={userInput.title}
+                            checked={doesVideoExist(item, video._id) ? true : false}
                             onChange={() => addToPlaylistHandler(item._id, video)}
                         />
                         {item.title}
@@ -46,22 +50,30 @@ const PlaylistModal = ({ video, toggleModalVisibility }) => {
             </div>
             <div className="modal-bottom">
                 <div className={playlistInput}>
-                    <input
-                        type="text"
-                        className="playlist-name"
-                        required
-                        value={userInput.title}
-                        onChange={(event) =>
-                            setUserInput({ ...userInput, title: event.target.value })
-                        }
-                        placeholder='Enter playlist title'
-                    />
-                    <button
-                        className="create-cta"
-                        onClick={() => handleNewPlaylist(userInput)}
+                    <form
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            handleNewPlaylist(userInput);
+                            setUserInput({ ...userInput, title: '' });
+                        }}
                     >
-                        Create Playlist
-                    </button>
+                        <input
+                            type="text"
+                            className="playlist-name"
+                            required
+                            value={userInput.title}
+                            onChange={(event) =>
+                                setUserInput({ ...userInput, title: event.target.value })
+                            }
+                            placeholder="Enter playlist title"
+                        />
+                        <button
+                            className="create-cta"
+                            // onClick={() => handleNewPlaylist(userInput)}
+                        >
+                            Create Playlist
+                        </button>
+                    </form>
                 </div>
                 <button className="btn-create-playlist" onClick={() => toggleInput()}>
                     Create New Playlist
