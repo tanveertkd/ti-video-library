@@ -48,7 +48,7 @@ const VideoCard = ({ video }) => {
                     <p className="creator-name">{video.creator}</p>
                 </div>
                 <div className="card-overflow-menu" onClick={toggleOverflowMenu}>
-                    <i class="far fa-ellipsis-v overflow-icn"></i>
+                    <i className="far fa-ellipsis-v overflow-icn"></i>
                     <div className={`${overflowState} overflow-container`}>
                         <OverflowMenu video={video} />
                     </div>

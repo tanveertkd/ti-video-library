@@ -61,7 +61,7 @@ const PlaylistProvider = ({ children }) => {
         if (auth) {
             const response = await deleteVideoFromPlaylist(AUTH_TOKEN, playlistId, videoId);
             playlistDispatcher({ type: 'DELETE_FROM_PLAYLIST', payload: response.data.playlist });
-            toast.success('Video deleated from playlist');
+            toast.success('Video deleted from playlist');
         }
     };
 

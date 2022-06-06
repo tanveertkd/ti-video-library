@@ -50,7 +50,7 @@ const PlaylistModal = ({ video, toggleModalVisibility }) => {
             </div>
             <div className="modal-bottom">
                 <div className={playlistInput}>
-                    <form
+                    <form className='modal-form'
                         onSubmit={(e) => {
                             e.preventDefault();
                             handleNewPlaylist(userInput);

@@ -12,7 +12,7 @@ const Sidebar = () => {
         <div className="nav-sidebar-container">
             <ul className="nav-sidebar-ul">
                 <li className="sidebar-item">
-                    <label for="sidebar-item-link">
+                    <label>
                         <NavLink
                             to="/"
                             className="sidebar-item-link"
@@ -34,52 +34,52 @@ const Sidebar = () => {
                 </li> */}
 
                 <li className="sidebar-item">
-                    <label for="sidebar-item-link">
+                    <label>
                         <NavLink
                             to="/playlists"
                             className="sidebar-item-link"
                             style={({ isActive }) => (isActive ? active : undefined)}
                         >
-                            <i class="far fa-list sidebar-icn"></i>
+                            <i className="far fa-list sidebar-icn"></i>
                             Playlists
                         </NavLink>
                     </label>
                 </li>
 
                 <li className="sidebar-item">
-                    <label for="sidebar-item-link">
+                    <label>
                         <NavLink
                             to="/liked"
                             className="sidebar-item-link"
                             style={({ isActive }) => (isActive ? active : undefined)}
                         >
-                            <i class="far fa-thumbs-up sidebar-icn"></i>
+                            <i className="far fa-thumbs-up sidebar-icn"></i>
                             Liked Videos
                         </NavLink>
                     </label>
                 </li>
 
                 <li className="sidebar-item">
-                    <label for="sidebar-item-link">
+                    <label>
                         <NavLink
                             to="./watchlater"
                             className="sidebar-item-link"
                             style={({ isActive }) => (isActive ? active : undefined)}
                         >
-                            <i class="far fa-clock sidebar-icn"></i>
+                            <i className="far fa-clock sidebar-icn"></i>
                             Watch Later
                         </NavLink>
                     </label>
                 </li>
 
                 <li className="sidebar-item">
-                    <label for="sidebar-item-link">
+                    <label>
                         <NavLink
                             to="./history"
                             className="sidebar-item-link"
                             style={({ isActive }) => (isActive ? active : undefined)}
                         >
-                            <i class="far fa-history sidebar-icn"></i>
+                            <i className="far fa-history sidebar-icn"></i>
                             History
                         </NavLink>
                     </label>

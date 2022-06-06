@@ -48,7 +48,7 @@ const Navbar = () => {
                 {/* {Nav middle} */}
                 <ul className="nav-main-middle nav-main-ul">
                     <li className="nav-main-li">
-                        <label for="nav-main-search" className="nav-item-search">
+                        <label className="nav-item-search">
                             <input
                                 className="nav-item-search-input"
                                 type="text"
@@ -98,7 +98,7 @@ const Navbar = () => {
                 {/* {Nav middle mobile} */}
                 <ul className="nav-main-ul nav-main-mobile">
                     <li className="nav-main-li">
-                        <label for="nav-main-search" className="nav-item-search">
+                        <label className="nav-item-search">
                             <input
                                 className="nav-item-search-input"
                                 type="text"
