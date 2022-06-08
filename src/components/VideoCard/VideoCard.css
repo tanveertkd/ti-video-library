@@ -7,6 +7,9 @@
     cursor: pointer;
     border-radius: 0.2rem;
     transition: 0.4s linear;
+    border: 1px solid var(--color-text-lighter-grey);
+    border-radius: 00.5rem;
+    height: 290px;
 }
 
 .video-card-container:hover {
@@ -95,6 +98,6 @@
 
     .video-thumbnail-asset {
         height: 10rem;
-        width: 17.80rem;
+        width: 18rem;
     }
 }

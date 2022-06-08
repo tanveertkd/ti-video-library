@@ -21,7 +21,11 @@ const playlistReducer = (state, action) => {
         case 'ADD_VIDEO_TO_PLAYLIST':
             return {
                 ...state,
-                playlist: action.payload.response,
+                playlist: state.playlist.map((singlePlaylist) =>
+                    singlePlaylist._id === action.payload.response._id
+                        ? action.payload.response
+                        : singlePlaylist,
+                ),
                 exists: action.payload.exists,
             };
 

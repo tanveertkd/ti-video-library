@@ -3,30 +3,35 @@ import { useParams } from 'react-router-dom';
 import { PlaylistModal } from '../../components/Playlist/PlaylistModal';
 import { useLike, useWatchLater } from '../../context';
 import { useVideoProvider } from '../../context/video-listing-context';
+import { getVideoById } from '../../services';
 import { embeddedLink } from '../../utils/';
 
 import './WatchVideo.css';
 
 const WatchVideo = () => {
     const { videoId } = useParams();
-    const { videoListState, getVideoByIdHandler } = useVideoProvider();
+    const { videoListState, videoListDispatch } = useVideoProvider();
     const { likedVideos, likeVideoHandler, removeFromLikes } = useLike();
     const { watchLaterState, addToWatchLaterHandler, removeFromWatchLaterHandler } =
         useWatchLater();
 
-    useEffect(() => (async () => getVideoByIdHandler(videoId))());
+    useEffect(() => {
+        (async ()=> {
+            const response = await getVideoById(videoId);
+            if(response.status === 200) {
+                videoListDispatch({type: 'SINGLE_VIDEO', payload: response.data.video});
+            }
+        })()
+    }, [videoListDispatch, videoId]);
 
-    const { title, description, creator, creatorPhoto } = videoListState.singleVideo;
+    const { title, description, creator, creatorPhoto } = videoListState?.singleVideo;
 
     const alreadyLiked = likedVideos.data?.find((item) => item._id === videoId);
     const alreadyInWatchLater = watchLaterState.data?.find((item) => item._id === videoId);
 
     const [modalVisibility, toggleModalVisibility] = useState(false);
 
-    const toggleModal = () =>
-        toggleModalVisibility(
-            (modalVisibility) => !modalVisibility,
-        );
+    const toggleModal = () => toggleModalVisibility((modalVisibility) => !modalVisibility);
 
     return (
         <div>
@@ -38,7 +43,7 @@ const WatchVideo = () => {
                         src={embeddedLink(videoId)}
                         title="YouTube video player"
                         frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                         allowFullScreen
                         loading="lazy"
                         className="video-player-frame"
@@ -61,7 +66,7 @@ const WatchVideo = () => {
                                             }
                                         >
                                             <i
-                                                class={`${
+                                                className={`${
                                                     alreadyLiked ? 'fas' : 'far'
                                                 } fa-thumbs-up action-icn icn`}
                                             ></i>
@@ -81,7 +86,7 @@ const WatchVideo = () => {
                                             }
                                         >
                                             <i
-                                                class={`${
+                                                className={`${
                                                     alreadyInWatchLater ? 'fas' : 'far'
                                                 } fa-clock action-icn icn`}
                                             ></i>
@@ -90,7 +95,7 @@ const WatchVideo = () => {
                                     </div>
                                     <div className="video-action modal-parent">
                                         <label for="action-icn" onClick={() => toggleModal()}>
-                                            <i class="far fa-list action-icn icn"></i>
+                                            <i className="far fa-list action-icn icn"></i>
                                             Save
                                         </label>
                                     </div>
@@ -121,7 +126,7 @@ const WatchVideo = () => {
                     </div>
                 )}
 
-                <div className="watch-container-right">
+                {/* <div className="watch-container-right">
                     <div className="notes-container">
                         <div className="notes-header">Make a note!</div>
                         <div className="note">
@@ -134,7 +139,7 @@ const WatchVideo = () => {
                             <i class="fas fa-paper-plane"></i>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );
